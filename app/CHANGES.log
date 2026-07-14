@@ -1,2 +1,3 @@
 2026-07-13T11:53:17.693976-05:00 fix: corrige formato de monto en fila de transaccion
 2026-07-16T01:49:26.394285-05:00 feat: agrega columna de comercio afiliado
+2026-07-14T04:10:44.378442-05:00 fix: maneja estado 'En proceso' sin datos

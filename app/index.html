@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PagoSeguro — Estado de Transacciones</title>
+  <style>
+    :root { --navy:#1E2761; --ice:#EDF2FC; --amber:#D97A06; }
+    body { font-family: Calibri, system-ui, sans-serif; margin:0; background:var(--ice); color:var(--navy); }
+    header { background:var(--navy); color:#fff; padding:16px 24px; }
+    header h1 { font-family: Cambria, Georgia, serif; margin:0; font-size:20px; }
+    main { padding:24px; max-width:820px; margin:0 auto; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th, td { text-align:left; padding:10px 12px; border-bottom:1px solid #dde5f4; }
+    th { background:var(--navy); color:#fff; font-weight:normal; }
+    .ok { color:#137a3f; } .pend { color:var(--amber); } .err { color:#b3261e; }
+    footer { padding:16px 24px; font-size:12px; color:#5a6482; }
+  </style>
+</head>
+<body>
+  <header><h1>PagoSeguro · Estado de Transacciones del día</h1></header>
+  <main>
+    <table id="tx">
+      <thead>
+        <tr><th>ID</th><th>Comercio</th><th>Monto (S/)</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <!-- Se pobla desde Supabase (tabla `transacciones`) en la versión con datos -->
+        <tr><td>TX-1042</td><td>Bodega La Esquina</td><td>128.50</td><td class="ok">Liquidada</td></tr>
+        <tr><td>TX-1043</td><td>Farmacia Zeta</td><td>54.00</td><td class="pend">En proceso</td></tr>
+        <tr><td>TX-1044</td><td>Librería Andes</td><td>312.90</td><td class="ok">Liquidada</td></tr>
+        <tr><td>TX-1045</td><td>Cafetería Rho</td><td>18.00</td><td class="err">Rechazada</td></tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>Build: <span id="build">local</span> · PagoSeguro S.A.C. — INF384</footer>
+</body>
+</html>

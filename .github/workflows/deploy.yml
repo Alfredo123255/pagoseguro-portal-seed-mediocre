@@ -1,0 +1,38 @@
+name: deploy
+
+# Pipeline base del Portal de Estado de Transacciones.
+# Material de estudio del Bloque 3. Se dispara con cada push a main.
+on:
+  push:
+    branches: [ main ]
+
+# El deploy a Vercel es OPCIONAL: si no hay VERCEL_TOKEN, el job se salta
+# el paso de deploy pero igual construye. Así todos ven el pipeline correr.
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'   # runtime fijado en el repo, no en la laptop
+
+      - name: Install (instalacion reproducible)
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Registrar despliegue en el ledger
+        # Patron real: cada corrida anexa una fila a deployments.csv con el
+        # resultado. Esta es la fuente que alimenta las metricas DORA.
+        run: echo "Registrando evento de despliegue..."
+
+      - name: Deploy a Vercel (opcional)
+        if: ${{ env.VERCEL_TOKEN != '' }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel deploy --prod --prebuilt --token "$VERCEL_TOKEN"

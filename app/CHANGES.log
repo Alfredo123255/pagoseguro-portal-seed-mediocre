@@ -5,3 +5,4 @@
 2026-07-18T14:44:40.179031-05:00 feat: filtra transacciones del dia actual
 2026-07-20T20:10:37.605347-05:00 fix: color de estado 'Rechazada' no aplicaba
 2026-07-23T04:05:46.910920-05:00 refactor: separa render de tabla
+2026-07-21T16:06:17.791553-05:00 fix: encoding en nombres de comercio

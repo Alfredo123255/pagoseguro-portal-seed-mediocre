@@ -4,3 +4,4 @@
 2026-07-15T08:31:39.006134-05:00 chore: actualiza dependencias del build
 2026-07-18T14:44:40.179031-05:00 feat: filtra transacciones del dia actual
 2026-07-20T20:10:37.605347-05:00 fix: color de estado 'Rechazada' no aplicaba
+2026-07-23T04:05:46.910920-05:00 refactor: separa render de tabla

@@ -8,3 +8,4 @@
 2026-07-21T16:06:17.791553-05:00 fix: encoding en nombres de comercio
 2026-07-23T08:24:44.894710-05:00 feat: muestra hash de build en footer
 2026-07-28T03:03:57.693551-05:00 fix: alto contraste en encabezado
+2026-07-26T19:55:42.597795-05:00 chore: fija node 22 en .nvmrc

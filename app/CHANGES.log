@@ -11,3 +11,4 @@
 2026-07-26T19:55:42.597795-05:00 chore: fija node 22 en .nvmrc
 2026-07-31T02:01:31.685681-05:00 fix: overflow en montos de 4 cifras
 2026-08-02T07:08:23.264883-05:00 feat: orden por monto descendente
+2026-08-02T04:27:34.156635-05:00 fix: cache-control del index

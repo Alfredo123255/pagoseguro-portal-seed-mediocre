@@ -15,3 +15,4 @@
 2026-08-01T05:34:38.780654-05:00 refactor: extrae paleta a variables CSS
 2026-08-07T00:22:13.809794-05:00 fix: fallback cuando Supabase no responde
 2026-08-08T08:57:56.338556-05:00 feat: badge de ultima actualizacion
+2026-08-09T17:53:04.116742-05:00 chore: limpia assets sin uso

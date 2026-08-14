@@ -18,3 +18,4 @@
 2026-08-09T17:53:04.116742-05:00 chore: limpia assets sin uso
 2026-08-11T16:41:48.157383-05:00 fix: doble render en carga inicial
 2026-08-09T18:39:06.350109-05:00 feat: paginacion basica de la tabla
+2026-08-13T23:23:44.899559-05:00 fix: corrige formato de monto en fila de transaccion

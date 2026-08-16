@@ -20,3 +20,4 @@
 2026-08-09T18:39:06.350109-05:00 feat: paginacion basica de la tabla
 2026-08-13T23:23:44.899559-05:00 fix: corrige formato de monto en fila de transaccion
 2026-08-13T20:31:04.105063-05:00 feat: agrega columna de comercio afiliado
+2026-08-16T09:52:06.045391-05:00 fix: maneja estado 'En proceso' sin datos

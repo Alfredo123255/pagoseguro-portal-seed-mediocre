@@ -22,3 +22,4 @@
 2026-08-13T20:31:04.105063-05:00 feat: agrega columna de comercio afiliado
 2026-08-16T09:52:06.045391-05:00 fix: maneja estado 'En proceso' sin datos
 2026-08-15T15:08:33.363288-05:00 chore: actualiza dependencias del build
+2026-08-18T09:09:33.239358-05:00 feat: filtra transacciones del dia actual

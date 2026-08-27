@@ -15,16 +15,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        # La version sale del campo "packageManager" de package.json:
+        # el gestor de paquetes tambien queda fijado en el repo.
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'   # runtime fijado en el repo, no en la laptop
+          cache: 'pnpm'                 # cachea el store de pnpm entre corridas
 
       - name: Install (instalacion reproducible)
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Registrar despliegue en el ledger
         # Patron real: cada corrida anexa una fila a deployments.csv con el
@@ -35,4 +41,4 @@ jobs:
         if: ${{ env.VERCEL_TOKEN != '' }}
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: npx vercel deploy --prod --prebuilt --token "$VERCEL_TOKEN"
+        run: npx vercel deploy --prod --yes --token "$VERCEL_TOKEN"

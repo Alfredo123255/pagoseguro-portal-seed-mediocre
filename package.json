@@ -2,8 +2,12 @@
   "name": "pagoseguro-portal-transacciones",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "mkdir -p dist && cp -r app/* dist/ && echo build-ok",
-    "start": "npx serve app"
+    "start": "pnpm dlx serve app"
   }
 }

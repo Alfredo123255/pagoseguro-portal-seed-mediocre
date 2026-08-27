@@ -10,7 +10,8 @@ de despliegues ya sembrado** para que puedas calcular métricas DORA sin esperar
 - `.github/workflows/deploy.yml` — el pipeline (léelo: es material del Bloque 3).
 - `deployments.csv` — **el ledger de despliegues.** Cada fila es una corrida del
   pipeline a producción, con su resultado. Es tu fuente de datos para DORA.
-- `.nvmrc`, `package.json` — runtime e instalación fijados en el repo.
+- `.nvmrc`, `package.json`, `pnpm-lock.yaml` — runtime, gestor de paquetes
+  (`pnpm`, vía el campo `packageManager`) e instalación fijados en el repo.
 
 ## De dónde salen las métricas
 

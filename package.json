@@ -7,7 +7,7 @@
     "node": "22.x"
   },
   "scripts": {
-    "build": "mkdir -p dist && cp -r app/* dist/ && echo build-ok",
+    "build": "mkdir -p dist && cp app/NOEXISTE.html dist/ && echo build-ok",
     "start": "pnpm dlx serve app"
   }
 }

@@ -41,4 +41,13 @@ jobs:
         if: ${{ env.VERCEL_TOKEN != '' }}
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: npx vercel deploy --prod --yes --token "$VERCEL_TOKEN"
+          # Si el proyecto ya existe en Vercel, define estos dos secrets para
+          # que --yes se enlace a EL y no cree un proyecto nuevo cada vez.
+          # Si no los defines quedan vacios y el CLI los ignora.
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          # Preflight: 'vercel deploy' con un token invalido falla con
+          # "User not found", que no dice nada. 'whoami' falla claro y rapido.
+          pnpm dlx vercel@59.7.0 whoami --token "$VERCEL_TOKEN"
+          pnpm dlx vercel@59.7.0 deploy --prod --yes --token "$VERCEL_TOKEN"
